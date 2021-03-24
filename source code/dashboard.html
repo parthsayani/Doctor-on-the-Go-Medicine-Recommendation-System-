@@ -1,0 +1,230 @@
+<!--
+=========================================================
+* Paper Dashboard 2 - v2.0.1
+=========================================================
+
+* Product Page: https://www.creative-tim.com/product/paper-dashboard-2
+* Copyright 2020 Creative Tim (https://www.creative-tim.com)
+
+Coded by www.creative-tim.com
+
+ =========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bootstrap-tagsinput.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rainbow/1.2.0/themes/github.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    CSE 573 project
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  <!-- CSS Files -->
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="assets/css/paper-dashboard.css?v=2.0.1" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="assets/js/jquery.tagsinput-revisited.js"></script>
+    <link rel="stylesheet" href="assets/js/jquery.tagsinput-revisited.css" />
+  <style type="text/css">
+
+
+.card-header {
+ }
+
+
+.main-panel {
+	position: : absolute;
+}
+
+}
+.btn {
+  width: 30px;
+  height: 30px;
+  background: white;
+  border: 0.5px solid #005bac;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  color: #005bac;
+  padding: 15px 10px 5px;
+
+  text-align: center;
+
+
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  background: #eef;
+}
+
+.zoom {
+  bottom: 10px;
+}
+
+.zoom-out {
+  bottom: 120px;
+}
+.zoom-init {
+  bottom: 50px;
+}
+
+
+.process_image{
+	/*display: block;*/
+   padding-top : 0% ;
+	height: 50%;
+  font-size: 15px;
+}
+
+.img-wrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
+  text-align: center;
+}
+
+div > img {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-height: 10%;
+  min-width: 80%;
+  transform: translate(-50%, -50%);
+  margin-bottom: 10px;
+}
+
+.heading {
+    margin: 0 0 10 0;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+    background:#ff6666;
+    padding: 5px; 
+    border-radius:10px;
+    font-weight: bold;
+}
+
+
+
+/*.bubble_container{
+	height: 50%;
+}*/
+
+
+/* 	*/
+  </style>
+
+</head>
+
+
+<body class="">
+    <div class="heading">Doctor On The Go!</div>
+    <div class="wrapper ">
+
+        <div class="main-panel">
+
+            <!-- End Navbar -->
+            <div class="row upper_row">
+                <div class="col-md-5">
+                    <div class="process_image" style="padding-bottom: 10px; text-align: center;">
+                        <h8>Steps To Follow:</h8>
+                        <br>
+                        <br>
+                        <p8>1. Select the symptoms to view the bubble chart. You can zoom or pan the bubble to explore the chart</p8>
+                        <br>
+                        <p9>2. Click on the desired disease on bubble chart to view the timeseries graph and medicines for the selected disease.</p9>
+                    </div>
+                    <div style="height: 5%"></div>
+                    <div class="card" style="height:40%">
+                        <div class="card-header" id="symheight">
+                            <h5 class="card-title">Enter Your Symptoms</h5>
+                        </div>
+                        <input id="form-tags-4" name="tags-4" type="text" value="" data-role="tagsinput">
+
+
+                    </div>
+                </div>
+                <div class="col-md-7 bubble_container">
+                    <div class="card card-chart">
+                        <div class="card-header" style="text-align: center;">
+                            <div class="card-title">Top 20 Diseases</div>
+                        </div>
+                        <div class="card-body" id='bubble_chart'>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7" id='container'>
+                    <div class="card ">
+
+                        <div class="card-header" id="timeline">
+                            <div class="card-header" style="text-align: center;">
+                                <div class="card-title" id="line_chart_title"></div>
+                            </div>
+                            <div id="line" style="width: 49.5%; margin-left:0.3%; margin-bottom: 10px"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5" id="circles_height">
+                    <div class="card ">
+                        <div class="card-header ">
+                            <div class="card-title" id="title_circle" style="text-align: center;"></div>
+                        </div>
+                        <div class="card-body " id='circles' style="text-align: center;">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+    <!--   Core JS Files   -->
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="data/disease_review_sentiment.json"></script>
+    <script type="text/javascript" src="data/random_disease_symptons.json"></script>
+    <script type="text/javascript" src="data/month_disease_count.json"></script>
+    <script type="text/javascript" src="data/actual_sym.json"></script>
+
+
+
+    <script src="assets/js/line_chart.js"></script>
+    <script src="assets/js/top3_medicine.js"></script>
+    <script src="assets/js/sentiment_analysis.js"></script>
+    <script src="assets/js/bubble_chart.js"></script>
+    <script src="assets/js/symptom_mapping.js"></script>
+    <script src="assets/js/search_bar.js"></script>
+
+
+
+</body>
+
+</html>
